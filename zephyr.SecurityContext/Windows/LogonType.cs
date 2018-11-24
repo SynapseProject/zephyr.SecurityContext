@@ -9,14 +9,16 @@
         /// therefore, it is inappropriate for some client/server applications,
         /// such as a mail server.
         /// </summary>
-        LOGON32_LOGON_INTERACTIVE = 2,
+        //  LOGON32_LOGON_INTERACTIVE = 2,
+        Interactive = 2,
 
         /// <summary>
         /// This logon type is intended for high performance servers to authenticate plaintext passwords.
 
         /// The LogonUser function does not cache credentials for this logon type.
         /// </summary>
-        LOGON32_LOGON_NETWORK = 3,
+        //  LOGON32_LOGON_NETWORK = 3,
+        Network = 3,
 
         /// <summary>
         /// This logon type is intended for batch servers, where processes may be executing on behalf of a user without
@@ -24,18 +26,21 @@
         /// authentication attempts at a time, such as mail or Web servers.
         /// The LogonUser function does not cache credentials for this logon type.
         /// </summary>
-        LOGON32_LOGON_BATCH = 4,
+        //  LOGON32_LOGON_BATCH = 4,
+        Batch = 4,
 
         /// <summary>
         /// Indicates a service-type logon. The account provided must have the service privilege enabled.
         /// </summary>
-        LOGON32_LOGON_SERVICE = 5,
+        //  LOGON32_LOGON_SERVICE = 5,
+        Service = 5,
 
         /// <summary>
         /// This logon type is for GINA DLLs that log on users who will be interactively using the computer.
         /// This logon type can generate a unique audit record that shows when the workstation was unlocked.
         /// </summary>
-        LOGON32_LOGON_UNLOCK = 7,
+        //  LOGON32_LOGON_UNLOCK = 7,
+        Unlock = 7,
 
         /// <summary>
         /// This logon type preserves the name and password in the authentication package, which allows the server to make
@@ -44,7 +49,8 @@
         /// communicate with other servers.
         /// NOTE: Windows NT:  This value is not supported.
         /// </summary>
-        LOGON32_LOGON_NETWORK_CLEARTEXT = 8,
+        //  LOGON32_LOGON_NETWORK_CLEARTEXT = 8,
+        NetworkCleartext = 8,
 
         /// <summary>
         /// This logon type allows the caller to clone its current token and specify new credentials for outbound connections.
@@ -52,6 +58,7 @@
         /// NOTE: This logon type is supported only by the LOGON32_PROVIDER_WINNT50 logon provider.
         /// NOTE: Windows NT:  This value is not supported.
         /// </summary>
-        LOGON32_LOGON_NEW_CREDENTIALS = 9,
+        //  LOGON32_LOGON_NEW_CREDENTIALS = 9,
+        NewCredentials = 9,
     }
 }

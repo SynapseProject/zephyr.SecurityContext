@@ -21,7 +21,7 @@ namespace zephyr.SecurityContext.Windows
 
         [PermissionSet( SecurityAction.Demand, Name = "FullTrust" )]
         public void Impersonate(SecureString userName, SecureString domain, SecureString password,
-            LogonType logonType = LogonType.LOGON32_LOGON_INTERACTIVE, LogonProvider logonProvider = LogonProvider.LOGON32_PROVIDER_DEFAULT)
+            LogonType logonType = LogonType.Interactive, LogonProvider logonProvider = LogonProvider.Default)
         {
             if( !IsImpersonating )
             {

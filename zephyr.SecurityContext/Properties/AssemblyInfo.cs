@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle( "zephyr.SecurityContext" )]
-[assembly: AssemblyDescription( "Utilities for changing security contaxt - Win32 Impersonation.  Future: AWS/Azure login, *nix sudo." )]
+[assembly: AssemblyDescription( "Utilities for changing security context - Win32 Impersonation.  Future: AWS/Azure login, *nix sudo." )]
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "" )]
 [assembly: AssemblyProduct( "zephyr.SecurityContext" )]
