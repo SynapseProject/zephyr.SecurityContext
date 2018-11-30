@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{13F0
 		scripts\AssemblyInfo.xml = scripts\AssemblyInfo.xml
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Win32Tester", "Tester\Win32Tester.csproj", "{D0A4379D-9724-4560-B1EA-3C81AAEFAB7E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,6 +22,10 @@ Global
 		{A42FCB55-C319-45C6-BE14-8693369097B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A42FCB55-C319-45C6-BE14-8693369097B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A42FCB55-C319-45C6-BE14-8693369097B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0A4379D-9724-4560-B1EA-3C81AAEFAB7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0A4379D-9724-4560-B1EA-3C81AAEFAB7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0A4379D-9724-4560-B1EA-3C81AAEFAB7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0A4379D-9724-4560-B1EA-3C81AAEFAB7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

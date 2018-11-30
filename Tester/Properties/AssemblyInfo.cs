@@ -1,16 +1,16 @@
-using System.Reflection;
+﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle( "zephyr.SecurityContext" )]
-[assembly: AssemblyDescription( "Utilities for changing security context - Win32 Impersonation.  Future: AWS/Azure login, *nix sudo." )]
+[assembly: AssemblyTitle( "ImpersonationTester" )]
+[assembly: AssemblyDescription( "" )]
 [assembly: AssemblyConfiguration( "" )]
 [assembly: AssemblyCompany( "" )]
-[assembly: AssemblyProduct( "zephyr.SecurityContext" )]
-[assembly: AssemblyCopyright( "Copyright ©  Steve Shortt, 2016 - 2018" )]
+[assembly: AssemblyProduct( "ImpersonationTester" )]
+[assembly: AssemblyCopyright( "Copyright ©  2018" )]
 [assembly: AssemblyTrademark( "" )]
 [assembly: AssemblyCulture( "" )]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible( false )]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid( "a42fcb55-c319-45c6-be14-8693369097b8" )]
+[assembly: Guid( "d0a4379d-9724-4560-b1ea-3c81aaefab7e" )]
 
 // Version information for an assembly consists of the following four values:
 //
@@ -33,4 +33,4 @@ using System.Runtime.InteropServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion( "1.0.0.0" )]
-[assembly: AssemblyFileVersion( "1.0.18334.0" )]
+[assembly: AssemblyFileVersion( "1.0.0.0" )]
