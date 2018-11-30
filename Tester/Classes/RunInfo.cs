@@ -32,6 +32,14 @@ namespace ImpersonationTester
                     UseShellExecute = false
                 },
 
+                IdentityRunAs = new SecurityContext
+                {
+                    Domain = "domain",
+                    UserName = "user0",
+                    Password = "password0",
+                    UseIdentity = false
+                },
+
                 ProcessRunAs = new SecurityContext
                 {
                     Domain = "domain",

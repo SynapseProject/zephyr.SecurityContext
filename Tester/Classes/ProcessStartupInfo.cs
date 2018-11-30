@@ -12,7 +12,7 @@ namespace ImpersonationTester
         public bool RedirectStandardOutput { get; set; }
         public bool RedirectStandardError { get; set; }
         public bool UseShellExecute { get; set; }
-        public int TimeoutMilliseconds { get; set; } = 90000;
+        public int TimeoutMilliseconds { get; set; } = 10000;
 
         public ProcessStartInfo ToProcessStartInfo()
         {
