@@ -1,55 +1,42 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A42FCB55-C319-45C6-BE14-8693369097B8}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>zephyr.SecurityContext</RootNamespace>
-    <AssemblyName>zephyr.SecurityContext</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
+    <TargetFrameworks>netstandard2.0;net461</TargetFrameworks>
+    <PackageId>Zephyr.SecurityContext</PackageId>
+    <Authors>Steve Shortt</Authors>
+    <Product>Zephyr.SecurityContext</Product>
+    <Description>Zephyr is the namespace for utility libraries in Synapse; Zephyr utilities are suitable for stand-alone usage outside Synapse. Synapse is a lightweight execution engine for unifying federated data sources and processes. The SecurityContext lib provides utilities for changing sec context via Win32 imper; future: AWS/Az logon, *nix sudo. https://synapseproject.github.io/</Description>
+    <Copyright>Steve Shortt</Copyright>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/SynapseProject/zephyr.SecurityContext/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>http://synapse.readthedocs.io/en/latest/</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/SynapseProject/synapseproject.github.io/master/images/zephyr_logo_64x64.png</PackageIconUrl>
+    <RepositoryUrl>https://github.com/SynapseProject/zephyr.SecurityContext</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Win32 Impersonation SecurityContext</PackageTags>
+    <PackageReleaseNotes>All features are presently working and passing unit tests.
+
+- 1.0.18345: Upgraded to net461 and added netstandard20/compatible classes
+- 1.0.18328: Initial release, includes Win32 impersonation</PackageReleaseNotes>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.18345.0</FileVersion>
+    <Version>1.0.18345.0</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+
+  <PropertyGroup>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
+    <Compile Remove="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+
   <ItemGroup>
-    <Compile Include="Windows\LogonProvider.cs" />
-    <Compile Include="Windows\LogonType.cs" />
-    <Compile Include="StringUtilities.cs" />
-    <Compile Include="Windows\Win32Identity.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="2.1.0-preview.18571.3" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PreBuildEvent>powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -File $(SolutionDir)scripts\setVersion.ps1 -path $(ProjectDir)Properties\AssemblyInfo.cs -versionFile $(SolutionDir)scripts\AssemblyInfo.xml</PreBuildEvent>
-  </PropertyGroup>
+
+  <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+    <Exec Command="powershell.exe -ExecutionPolicy Bypass -NoProfile -NonInteractive -File $(SolutionDir)scripts\setVersion.ps1 -path $(ProjectPath) -versionFile $(SolutionDir)scripts\AssemblyInfo.xml" />
+  </Target>
+
 </Project>

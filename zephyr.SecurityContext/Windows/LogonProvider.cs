@@ -1,4 +1,4 @@
-﻿namespace zephyr.SecurityContext.Windows
+﻿namespace Zephyr.SecurityContext.Windows
 {
     public enum LogonProvider
     {

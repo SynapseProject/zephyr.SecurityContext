@@ -4,8 +4,8 @@ using System.IO;
 using System.Text;
 using System.Threading;
 
-using zephyr.SecurityContext;
-using zephyr.SecurityContext.Windows;
+using Zephyr.SecurityContext;
+using Zephyr.SecurityContext.Windows;
 
 namespace ImpersonationTester
 {
@@ -51,12 +51,14 @@ namespace ImpersonationTester
             {
                 StringBuilder stdout = new StringBuilder();
 
-                Win32Identity win32Identity = null;
+#if (NET452 || NET46 || NET461 || NET462 || NET47 || NET471 || NET472)
+                Win32Impersonate win32Identity = null;
                 if( r.HasIdentityRunAs && r.IdentityRunAs.UseIdentity )
                 {
-                    win32Identity = new Win32Identity();
+                    win32Identity = new Win32Impersonate();
                     win32Identity.Impersonate( r.IdentityRunAs.UserName.ToSecureString(), r.IdentityRunAs.Domain.ToSecureString(), r.IdentityRunAs.Password.ToSecureString() );
                 }
+#endif
 
                 process.Start();
 
@@ -88,7 +90,9 @@ namespace ImpersonationTester
 
                 process.WaitForExit( r.StartInfo.TimeoutMilliseconds );
 
+#if(NET452 || NET46 || NET461 || NET462 || NET47 || NET471 || NET472)
                 win32Identity?.Undo();
+#endif
 
                 Console.WriteLine( stdout.ToString() );
             }

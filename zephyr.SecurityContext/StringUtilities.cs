@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 using System.Security;
 
 
-namespace zephyr.SecurityContext
+namespace Zephyr.SecurityContext
 {
     public static class StringUtilities
     {
