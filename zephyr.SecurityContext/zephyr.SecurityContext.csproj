@@ -15,11 +15,12 @@
     <PackageTags>Win32 Impersonation SecurityContext</PackageTags>
     <PackageReleaseNotes>All features are presently working and passing unit tests.
 
+- 1.0.18350: code cleanup, method name alignment amongst classes
 - 1.0.18345: Upgraded to net461 and added netstandard20/compatible classes
 - 1.0.18328: Initial release, includes Win32 impersonation</PackageReleaseNotes>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.18345.0</FileVersion>
-    <Version>1.0.18345.0</Version>
+    <FileVersion>1.0.18350.0</FileVersion>
+    <Version>1.0.18350.0</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 

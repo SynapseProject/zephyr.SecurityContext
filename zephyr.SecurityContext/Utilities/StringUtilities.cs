@@ -33,7 +33,7 @@ namespace Zephyr.SecurityContext
             {
                 fixed ( char* valueChars = value )
                 {
-                    var secureValue = new SecureString( valueChars, value.Length );
+                    SecureString secureValue = new SecureString( valueChars, value.Length );
                     secureValue.MakeReadOnly();
                     return secureValue;
                 }

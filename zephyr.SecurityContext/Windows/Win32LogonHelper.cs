@@ -15,7 +15,14 @@ namespace Zephyr.SecurityContext.Windows
             string lpszPassword, int dwLogonType, int dwLogonProvider, out SafeAccessTokenHandle phToken);
 
         SafeAccessTokenHandle _token;
-        public SafeAccessTokenHandle TokenHandle { get { return _token; } }
+        public SafeAccessTokenHandle SafeTokenHandle { get { return _token; } }
+
+        public Win32LogonHelper() { }
+        public Win32LogonHelper(SecureString userName, SecureString domain, SecureString password,
+            LogonType logonType = LogonType.Interactive, LogonProvider logonProvider = LogonProvider.Default)
+        {
+            Logon( userName, domain, password, logonType, logonProvider );
+        }
 
         [PermissionSet( SecurityAction.Demand, Name = "FullTrust" )]
         public SafeAccessTokenHandle Logon(SecureString userName, SecureString domain, SecureString password,

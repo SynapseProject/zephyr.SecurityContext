@@ -25,11 +25,11 @@ namespace Zephyr.SecurityContext.Windows
         public Win32Identity(SecureString userName, SecureString domain, SecureString password,
             LogonType logonType = LogonType.Interactive, LogonProvider logonProvider = LogonProvider.Default)
         {
-            Login( userName, domain, password, logonType, logonProvider );
+            Logon( userName, domain, password, logonType, logonProvider );
         }
 
         [PermissionSet( SecurityAction.Demand, Name = "FullTrust" )]
-        public WindowsIdentity Login(SecureString userName, SecureString domain, SecureString password,
+        public WindowsIdentity Logon(SecureString userName, SecureString domain, SecureString password,
             LogonType logonType = LogonType.Interactive, LogonProvider logonProvider = LogonProvider.Default)
         {
             if( !HasIdentity )
@@ -52,7 +52,7 @@ namespace Zephyr.SecurityContext.Windows
         }
 
         [PermissionSet( SecurityAction.Demand, Name = "FullTrust" )]
-        public void Logout()
+        public void Logoff()
         {
             if( _token != IntPtr.Zero )
             {
@@ -66,7 +66,7 @@ namespace Zephyr.SecurityContext.Windows
 
         public void Dispose()
         {
-            Logout();
+            Logoff();
         }
     }
 }
